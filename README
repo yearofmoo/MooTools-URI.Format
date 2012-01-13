@@ -10,3 +10,6 @@ u.toString(); //http://www.yearofmoo.com/file.html
 
 You can also use it directly without having to instantiate a new URI object
 URI.setFormat('http://www.yearofmoo.com/file.html','php');
+
+Same goes for
+URI.getFormat('http://www.yearofmoo.com/file.html'); //html
