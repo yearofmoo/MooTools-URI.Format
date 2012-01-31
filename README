@@ -6,10 +6,10 @@ Example:
 
 u = new URI('http://www.yearofmoo.com/file.html');
 u.setFormat('php');
-u.toString(); //http://www.yearofmoo.com/file.html
+u.toString(); //http://www.yearofmoo.com/php.html
 
 You can also use it directly without having to instantiate a new URI object
-URI.setFormat('http://www.yearofmoo.com/file.html','php');
+URI.setFormat('http://www.yearofmoo.com/file.html','php'); //returns http://www.yearofmoo.com/file.php
 
 Same goes for
 URI.getFormat('http://www.yearofmoo.com/file.html'); //html
