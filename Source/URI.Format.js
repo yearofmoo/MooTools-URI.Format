@@ -26,6 +26,12 @@ URI.implement({
     }
 
     this.initialize(url);
+
+    return url;
+  },
+
+  hasFormat : function() {
+    return !! this.getFormat();
   },
 
   getFormat : function() {
@@ -37,17 +43,32 @@ URI.implement({
       }
     }
     return this.format;
+  },
+
+  clearFormat : function() {
+    var url = this.toString();
+    if(this.hasFormat()) {
+      var format = this.getFormat();
+      url = url.replace('.'+format,'');
+      this.initialize(url);
+    }
+    return url;
   }
-  
 
 });
 
 URI.extend({
 
+  hasFormat : function(url) {
+    return new URI(url).hasFormat();
+  },
+
+  clearFormat : function(url) {
+    return new URI(url).clearFormat();
+  },
+
   setFormat : function(url,format) {
-    url = new URI(url)
-    url.setFormat(format);
-    return url.toString();
+    return new URI(url).setFormat(format);
   },
 
   getFormat : function(url) {
