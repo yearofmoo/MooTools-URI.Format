@@ -25,6 +25,7 @@ URI.getFormat('http://www.yearofmoo.com/file.html'); //html
 ```
 
 As well as a few other methods
+
 ```javascript
 u = new URI(window.location); //http://localhost/page.html
 u.clearFormat(); //no more .html
