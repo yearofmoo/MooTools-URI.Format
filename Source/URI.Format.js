@@ -9,7 +9,9 @@ URI.implement({
   setFormat : function(format) {
     var url = this.toString();
     this.format = format;
-    format = '.'+format;
+    if(format.charAt(0) != '.') {
+      format = '.'+format;
+    }
     var matches = url.match(/^(?:https?:\/\/)?[^\/]+\/?([^\.\?\#]+)(?:\.(.+?))?((?:\?|\#).*)?$/) || [];
     if(matches.length>1) {
       var path = matches[1];
